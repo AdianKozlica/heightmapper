@@ -36,7 +36,7 @@ styles:
                     float new_value = (height - u_min)/(u_max - u_min);
 
                     if (height > u_min) {
-                        new_value += 0.55;
+                        new_value += 0.40;
                     }
                     
                     color.rgb = vec3(new_value);
