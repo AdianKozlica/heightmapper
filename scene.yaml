@@ -4,13 +4,13 @@ sources:
         url: https://tile.nextzen.org/tilezen/terrain/v1/256/terrarium/{z}/{x}/{y}.png
         max_zoom: 14
         url_params:
-            api_key: dmlO1fVQRPKI-GrVIYJ1YA
+            api_key: PYMsMj79TdeOZ-lKZgr4Zg
     mapzen:
         type: TopoJSON
         url: https://tile.nextzen.org/tilezen/vector/v1/256/all/{z}/{x}/{y}.topojson
         max_zoom: 16
         url_params:
-            api_key: dmlO1fVQRPKI-GrVIYJ1YA
+            api_key: PYMsMj79TdeOZ-lKZgr4Zg
 styles:
     hillshade:
         base: raster
@@ -35,6 +35,10 @@ styles:
                     // normalize to [0. - 1.]
                     float new_value = (height - u_min)/(u_max - u_min);
 
+                    if (height > u_min) {
+                        new_value += 0.55;
+                    }
+                    
                     color.rgb = vec3(new_value);
                     color.a = 1.0;
     togglelines:
